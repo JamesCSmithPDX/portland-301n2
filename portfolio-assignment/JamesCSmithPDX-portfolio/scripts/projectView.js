@@ -9,8 +9,7 @@ projectView.handleMainNav = function() {
   $('.topNav .tab:first').click();
 };
 
-// TODO: fix read more function
-
+// more and shrink function
 projectView.createTeaser = function() {
   $('.projDescription *:nth-of-type(2n+1)').hide();
   $('.shrink').hide();
@@ -27,7 +26,6 @@ projectView.createTeaser = function() {
     $('.shrink').hide();
   });
 };
-
 
 //call the functions
 $(document).ready(function() {
