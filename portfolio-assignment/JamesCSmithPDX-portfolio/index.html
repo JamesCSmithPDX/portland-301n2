@@ -15,24 +15,46 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/skeleton.css">
-  <link rel="stylesheet" href="styles/projects.css">
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/base-normalize.css">
+  <link rel="stylesheet" href="styles/layout-skeleton.css">
+  <link rel="stylesheet" href="styles/projects-modules.css">
+  <link rel="stylesheet" href="styles/main-modules.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="imgAssets/favicon.png">
 
+  <!-- Handlebars
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script id="portfolio-template" type="text/x-handlebars-template">
+    <article data-category="projectType">
+        <header>
+            <h2>{{title}}</h2>
+            <div class="contributors">
+                By <address><a href="{{contributorUrl}}">{{contributor}}</a></address>
+                <time pubdate datetime="2000-01-01" title={{postDate}}  >{{publishStatus}}</time>
+                <div class="screenShot">
+                <a href=""><img src="{{imgSrc}}" alt="{{imgAlt}}"></a>
+              </div>
+            </div>
+        </header>
+        <section class="projDescription">{{{projDescription}}}
+        </section>
+        <a href="#" class="read-on">More &rarr;</a>
+        <a href="#" class="shrink">&larr;Less</a>
+    </article>
+  </script>
+
 </head>
 <body>
     <header class="twelve.columns topPage">
-        <img src="imgAssets/logo.png" alt="TrajectoryDS logo">
-        <h1 class="top">Project Portfolio for James Smith</h1>
+        <a href="http://trajectoryds.com"><img src="imgAssets/logo.png" alt="TrajectoryDS logo"></a>
+        <h1 class="top">James Smith</h1>
+        <h4 class="top">Junior Developer</h4>
     </header>
     <nav class="mainNav">
       <ul class="topNav">
@@ -43,30 +65,38 @@
 
     <main>
         <section class="container eight.columns page-content" id="projects">
-            <article class="template" data-category="projectType">
+          <script id="portfolio-template" type="text/x-handlebars-template">
+            <article data-category="projectType">
                 <header>
-                    <h2>Project Title</h2>
+                    <h2>{{title}}</h2>
                     <div class="contributors">
-                        By <address><a href="">Author Names</a></address>
-                        <time pubdate datetime="2000-01-01">Published Time</time>
+                        By <address><a href="{{contributorUrl}}">{{contributor}}</a></address>
+                        <time pubdate datetime="2000-01-01" title={{postDate}}  >{{publishStatus}}</time>
                         <div class="screenShot">
-                        <a href=""><img src="" alt=""></a>
+                        <a href=""><img src="{{imgSrc}}" alt="{{imgAlt}}"></a>
                       </div>
                     </div>
                 </header>
-                <section class="projDescription"></section>
+                <section class="projDescription">{{{projDescription}}}
+                </section>
                 <a href="#" class="read-on">More &rarr;</a>
+                <a href="#" class="shrink">&larr;Less</a>
             </article>
+          </script>
         </section>
-    <footer id="about" class="page-content">
-        <ul>
-            <li><a href="https://twitter.com/JamesC_Smith" target="_blank">Twitter</a></li>
-            <li><a href="https://www.linkedin.com/in/jamescsmithpdx" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/JamesCSmithPDX" target="_blank">GitHub</a></li>
-        </ul>
+    <footer id="about" class="page-content container twelve.columns">
+        <p>
+          James is a junior developer who attended Code Fellows&trade; learning HTML, CSS, JavaScript, JQuery, Handlebars, Bootstrap and responsive design. In his previous life he was a market and competitive intelligence analyst, helping teams understand market landscapes, customers and competitors. He loves hiking the Gorge, craft beers and RipCity.
+        </p>
+        <div class="links">
+        <a href="https://twitter.com/JamesC_Smith" target="_blank"><img src="imgAssets\twitter.svg" alt="JamesC_Smith Twitter" class="icon" /></a>
+        <a href="https://www.linkedin.com/in/jamescsmithpdx" target="_blank"><img src="imgAssets\linkedin.svg" alt="James C Smith LinkedIn" class="icon" /></a>
+        <a href="https://github.com/JamesCSmithPDX" target="_blank"><img src="imgAssets\github.svg" alt="JamesCSmithPDX Github" class="icon" /></a>
+      </div>
     </footer>
     </main>
     <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="scripts/portfolioProjects.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/projectView.js"></script>
