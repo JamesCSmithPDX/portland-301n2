@@ -14,17 +14,19 @@ projectView.handleMainNav = function() {
 
 // more and shrink function
 projectView.createTeaser = function() {
-  $('.projDescription *:nth-of-type(2n+1)').hide();
+  $('.projDescription *:nth-child(n)').hide();
+  $('.projDescription *:nth-child(1)').show();
   $('.shrink').hide();
   $('.read-on').on('click', function(event) {
     event.preventDefault();
-    $(this).prev().find('*:nth-of-type(2n+1)').show();
+    $(this).prev().find('*:nth-child(n)').show();
     $(this).hide();
     $(this).next().show();
   });
   $('.shrink').on('click', function(e) {
     event.preventDefault();
-    $('.projDescription *:nth-of-type(2n+1)').hide();
+    $('.projDescription *:nth-child(n)').hide();
+    $('.projDescription *:nth-child(1)').show();
     $(this).hide();
     $(this).prev().show();
   });
