@@ -3,7 +3,7 @@ var projectData = [
     title: 'BusMall Market Analysis',
     projectType: 'web app',
     contributor: 'James Smith',
-    contributorUrl: 'https://github.com/JamesCSmithPDX/market-analysis-app',
+    contributorUrl: 'http://jamescsmithpdx.github.io/market-analysis-app/',
     postDate: '2016-04-17',
     imgSrc: 'imgAssets/busmall.png',
     imgAlt: 'BusMall',

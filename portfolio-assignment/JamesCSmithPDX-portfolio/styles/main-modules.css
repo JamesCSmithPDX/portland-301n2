@@ -1,42 +1,3 @@
-body {
-    background: #222f5b;
-}
-address {
-    display: inline-block;
-}
-hr {
-    margin: 1rem;
-    width: 80%;
-}
-header.topPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 10rem;
-    background-color: #5d5d5d;
-}
-header > a {
-  position: absolute;
-  vertical-align: middle;
-}
-header a > img {
-
-    width: 35%;
-    height: auto;
-}
-.top {
-    margin 0 0;
-    display: flex;
-}
-h1 {
-    color: #946b2d;
-    font-family: 'Abril Fatface', cursive;
-}
-h4 {
-    color: #222f5b;
-    font-family: 'Raleway', cursive;
-}
 .topNav {
     list-style-type: none;
     margin: 0;
@@ -51,19 +12,24 @@ ul.topNav li {
     width: 10rem;
     background-color: #222f5b;
     text-align: center;
-    border: 1px solid #000000;
+    border: 1px solid #222f5b;
     margin-left: .7rem;
     margin-top: 0.7rem;
+    -webkit-border-radius: 3px;
+   border-radius: 3px;
+   -webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
 }
 ul.topNav li:hover {
-    background-color: #0e1a40;
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
+    background-color: #5d5d5d;
 }
 ul.topNav a {
     text-decoration: none;
     color: #946b2d;
+}
+ul.topNav a:hover {
+  color: #222f5b;
 }
 footer {
     display: flex;
