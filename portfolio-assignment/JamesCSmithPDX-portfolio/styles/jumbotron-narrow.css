@@ -54,6 +54,7 @@ body {
   font-family: 'Raleway', cursive;
   margin: 40px 0;
   background-color: #eee;
+  border-radius: 5px;
 }
 .marketing p + h4 {
   margin-top: 28px;
