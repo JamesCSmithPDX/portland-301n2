@@ -13,13 +13,13 @@ ul.topNav li {
     background-color: #222f5b;
     text-align: center;
     border: 1px solid #222f5b;
-    margin-left: .7rem;
-    margin-top: 0.7rem;
+    margin-left: 0.7rem;
+    margin-top: 0.9rem;
     -webkit-border-radius: 3px;
-   border-radius: 3px;
-   -webkit-transition: all 0.3s ease-in-out;
-   -moz-transition: all 0.3s ease-in-out;
-   transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 ul.topNav li:hover {
     background-color: #5d5d5d;
@@ -29,28 +29,28 @@ ul.topNav a {
     color: #946b2d;
 }
 ul.topNav a:hover {
-  color: #222f5b;
+    color: #222f5b;
 }
 footer {
     display: flex;
     flex-direction: row;
     align-content: space-between;
-    background-color: #5d5d5d;
+    background-color: #eee;
 }
 .links {
     align-self: stretch;
     margin: auto;
 }
 .icon {
-    width: 7rem;
-    height: 7rem;
-    margin-right: 3rem;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
 }
 footer p {
     align-self: stretch;
-    color: #0e1a40;
+    color: #222f5b;
     width: 40rem;
     text-align: justify;
     margin: 1rem 2rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
