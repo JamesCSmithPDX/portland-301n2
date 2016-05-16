@@ -4,7 +4,6 @@ var projectView = {};
 projectView.handleMainNav = function() {
   $('.mainNav').on('click', 'li', function() {
     $('.page-content').hide();
-    //window.scrollTo;
     $('main').find('[id="'+$(this).attr('data-section')+'"]').toggle();
     $('html, body').animate({
       scrollTop: parseInt($(this).offset().top)
