@@ -21,13 +21,13 @@ projectView.createTeaser = function() {
     event.preventDefault();
     $(this).prev().find('*:nth-of-type(2n+1)').show();
     $(this).hide();
-    $('.shrink').show();
+    $(this).next().show();
   });
   $('.shrink').on('click', function(e) {
     event.preventDefault();
     $('.projDescription *:nth-of-type(2n+1)').hide();
-    $('.read-on').show();
-    $('.shrink').hide();
+    $(this).hide();
+    $(this).prev().show();
   });
 };
 
