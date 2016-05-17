@@ -13,7 +13,7 @@ var projectData = [
     title: 'Pat\'s Salmon Cookies',
     projectType: 'JavaScript',
     contributor: 'James Smith',
-    contributorUrl: 'https://github.com/JamesCSmithPDX/cookie-stand',
+    contributorUrl: 'http://jamescsmithpdx.github.io/cookie-stand/',
     postDate: '2016-04-04',
     imgSrc: 'imgAssets/cookie-store.png',
     imgAlt: 'Pat\'s Salmon Cookies',
