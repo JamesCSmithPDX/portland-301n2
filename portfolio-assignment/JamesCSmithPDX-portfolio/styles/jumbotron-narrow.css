@@ -24,6 +24,9 @@ body {
   margin-bottom: 0;
   line-height: 40px;
 }
+.header img {
+  max-width: 100%;
+}
 
 /* Custom page footer */
 .footer {
@@ -59,7 +62,9 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
-
+.marketing img {
+  max-width: 100%;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */

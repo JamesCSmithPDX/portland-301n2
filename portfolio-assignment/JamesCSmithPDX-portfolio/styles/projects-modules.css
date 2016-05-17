@@ -25,8 +25,7 @@
 .contributors img {
   display: block;
   margin: 1vw 0;
-  max-height: 20vw;
-  max-width: 30vw;
+  max-width: 100%;
 }
 time {
   font-size: .75em;
