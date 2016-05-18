@@ -9,7 +9,6 @@ projectView.handleMainNav = function() {
       scrollTop: parseInt($(this).offset().top)
     }, 2000);
   });
-  $('.topNav .tab:first').click();
 };
 
 // more and shrink function
@@ -34,6 +33,7 @@ projectView.createTeaser = function() {
 
 //call the functions
 $(document).ready(function() {
+  $('.page-content').hide();
   projectView.handleMainNav();
   projectView.createTeaser();
 });
