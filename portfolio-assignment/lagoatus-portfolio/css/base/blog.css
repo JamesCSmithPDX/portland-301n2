@@ -1,42 +1,3 @@
-/*NAV CONTENT
-===============================================================*/
-
-.name {
-    font-family: "Raleway", Helvetica, Arial, sans-serif;
-    font-style: oblique;
-    font-size: 1rem, padding: 1rem;
-    color: aliceblue;
-    text-align: center;
-}
-.mainHeader, header, p, #aboutSection {
-    font-family: "Raleway", Helvetica, Arial, sans-serif;
-    color: aliceblue;
-    opacity: .9;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-nav {
-    width: 100%;
-    height: auto;
-}
-.firstNav ul {
-    display: flex;
-    list-style-type: none;
-    padding: 1%;
-    margin-bottom: -1%;
-    text-align: center;
-    width: 90%;
-}
-.navList li {
-    display: block;
-    margin: 0 auto;
-    padding: 1%;
-    text-decoration: none;
-    width: 20%;
-}
-a {
-    text-decoration: none;
-}
 
 /*MAIN BODY CONTENT
 ===============================================================*/
@@ -45,9 +6,6 @@ a {
   color: gray;
 }
 
-.template {
-    display: none;
-}
 body {
     padding: 1em;
     background-color: rgb(30, 33, 39);
@@ -60,11 +18,6 @@ main {
 }
 #aboutSection section {
     display: block;
-}
-footer {
-    padding-left: -2%;
-    color: gray;
-    font-family: Times;
 }
 
 /*ARTICLES/PROFILES CONTENT
@@ -222,11 +175,11 @@ span {
 ===============================================================*/
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?yzefby');
-    src:    url('fonts/icomoon.eot?yzefby#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?yzefby') format('truetype'),
-        url('fonts/icomoon.woff?yzefby') format('woff'),
-        url('fonts/icomoon.svg?yzefby#icomoon') format('svg');
+    src:    url('../fonts/icomoon.eot?yzefby');
+    src:    url('../fonts/icomoon.eot?yzefby#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?yzefby') format('truetype'),
+        url('../fonts/icomoon.woff?yzefby') format('woff'),
+        url('../fonts/icomoon.svg?yzefby#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
