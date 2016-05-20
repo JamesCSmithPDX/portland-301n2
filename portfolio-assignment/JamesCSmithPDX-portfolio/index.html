@@ -27,22 +27,24 @@
   <!-- Handlebars
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script id="portfolio-template" type="text/x-handlebars-template">
-    <article data-category="projectType">
-        <header>
+    <div class="col-lg-6">
+      <article data-category="projectType">
+          <header>
             <h2>{{title}}</h2>
-            <div class="contributors">
-                By {{contributor}}
-                <time pubdate datetime="2000-01-01" title={{postDate}}  >{{publishStatus}}</time>
-                <div class="screenShot">
-                <a href="{{contributorUrl}}"><img src="{{imgSrc}}" alt="{{imgAlt}}"></a>
+              <div class="contributors">
+                  By {{contributor}}
+                  <time pubdate datetime="2000-01-01" title={{postDate}}  >{{publishStatus}}</time>
+                    <div class="thumbnail">
+                    <a href="{{contributorUrl}}"><img src="{{imgSrc}}" alt="{{imgAlt}}"></a>
+                  </div>
               </div>
-            </div>
-        </header>
-        <section class="projDescription">{{{projDescription}}}
-        </section>
-        <a href="#" class="read-on">More &rarr;</a>
-        <a href="#" class="shrink">&larr;Less</a>
-    </article>
+          </header>
+          <section class="projDescription">{{{projDescription}}}
+          </section>
+          <a href="#" class="read-on">More &rarr;</a>
+          <a href="#" class="shrink">&larr;Less</a>
+        </article>
+      </div>
   </script>
 </head>
 <body>
@@ -61,9 +63,11 @@
         </ul>
     </div>
     <main>
+      <div class="container">
       <div class="row marketing">
-        <section id="projects" class="col-lg-12 page-content">
+        <section id="projects" class="page-content">
         </section>
+      </div>
       </div>
     <footer id="about" class="page-content">
         <p>
