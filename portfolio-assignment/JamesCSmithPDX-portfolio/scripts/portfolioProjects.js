@@ -22,7 +22,7 @@ var projectData = [
   {
     title: 'Adventure Finders',
     projectType: 'JavaScript',
-    contributor: 'James Smith, Cass Burt, Rikki Hansen',
+    contributor: 'James Smith',
     contributorUrl: 'http://rikkihansen.github.io/adventureFinders/',
     postDate: '2016-05-01',
     imgSrc: 'imgAssets/adventurefinders.png',
