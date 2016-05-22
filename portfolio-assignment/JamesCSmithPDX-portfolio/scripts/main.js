@@ -1,4 +1,4 @@
-var projects=[];
+// var projects=[];
 
 // Contructor for new portfolio project
 function Project (post) {
@@ -11,6 +11,8 @@ function Project (post) {
   this.imgAlt = post.imgAlt;
   this.projDescription = post.projDescription;
 };
+
+Project.all = [];
 
 // build a blog post
 Project.prototype.toHtml = function() {
@@ -29,14 +31,20 @@ Project.prototype.toHtml = function() {
 };
 
 //sort blog data, crereate array, append to page
-projectData.sort(function(a,b) {
-  return (new Date(b.postDate)) - (new Date(a.postDate));
-});  //sort by date
+Project.loadAll = function(projectData){
+  projectData.sort(function(a,b) {
+    return (new Date(b.postDate)) - (new Date(a.postDate));
+  });  //sort by date
 
-projectData.forEach(function(el) {
-  projects.push(new Project(el));
-});  //create array
+  projectData.forEach(function(el) {
+    Project.all.push(new Project(el));
+  });  //create array
+};
 
-projects.forEach(function(a){
-  $('#projects').append(a.toHtml());
-});
+Project.fetchAll = function(){
+  $.getJSON('/data/portfolioProjects.json', function(json, status, XHR){
+    console.log(json);
+    // Project.loadAll(json);
+    // projectView.initIndexPage();
+  });
+};

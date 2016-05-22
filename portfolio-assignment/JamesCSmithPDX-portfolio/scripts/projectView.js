@@ -37,9 +37,12 @@ projectView.scroll = function(tease) {
 };
 
 //call the functions
-$(document).ready(function() {
+projectView.initIndexPage = function(){
+  Project.all.forEach(function(a){
+    $('#projects').append(a.toHtml());
+  });
   $('.page-content').hide();
   $('.jumbotron').fadeTo(15000, 0.0);
   projectView.handleMainNav();
   projectView.createTeaser();
-});
+};
