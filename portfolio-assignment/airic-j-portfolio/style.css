@@ -1,12 +1,30 @@
+/* base */
+
 html,body {
   height: 100%;
   margin: 0 2%;
   padding: 5px;
-  font-family: helvetica;
+  font-family: helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Raleway', sans-serif;
 }
 
 h1, h2, h3, p, li, a {
   color: #797979;
+}
+
+h1 {
+  font-size: 2.0rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.4rem;
 }
 
 a {
@@ -18,49 +36,23 @@ a:hover {
   cursor: pointer;
 }
 
+/* /base */
 
 
-/* style for nav */
-
-#ericImg {
-    width: 100px;
-    display: block;
-    margin: 20px auto;
-    border: 1px solid red;
-    border-radius: 500px;
-    -webkit-border-radius: 500px;
-    -moz-border-radius: 500px;
-}
-
-#pageTitle {
-  font-size: 60px;
-  display: block;
-  text-align: center;
-  font-weight: 300;
-  color: #797979;
-}
-
-
-/* style for sections */
+/* layout */
 
 section {
   margin-top: 20px;
 }
 
-/* style for projects */
+
+/* /layout */
+
+
+/* module */
 
 .prototype {
   display: none;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 40px;
-}
-
-li, #projects img {
-  margin-bottom: 10px;
 }
 
 .fullWidthImages {
@@ -74,59 +66,42 @@ li, #projects img {
 }
 
 .projectName {
-  font-size: 1.6em;
+  font-size: 1.6rem;
 }
 
 .projectDate {
-  font-size: 1.0em;
+  font-size: 1.0rem;
 }
 
-.projectLink {
-  font-size: 1.2em;
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 40px;
 }
 
-
-h2 {
-  font-size: 1.8em;
-}
-
-h3 {
-  font-size: 1.4em;
+li, #projects img {
+  margin-bottom: 10px;
 }
 
 p, .projectDescription, li>a {
-  font-size: 1.3em;
+  font-size: 1.1rem;
 }
 
-
-
-/* style for nav */
-
-.nav, .stickyNav {
-  display: block;
-  font-size: 1.3em;
-  background-color: white;
-  margin: 0 auto;
-  width: 100%;
+footer p {
   text-align: center;
+  font-size: 0.7rem;
+  margin: 20px auto;
 }
 
+/* /module */
 
-.nav a, .stickyNav a {
-  font-size: 0.9em;
-  display: inline-block;
-  margin-right: 15px;
-}
 
-#pageTitle {
-  font-size: 2.0em;
-  display: block;
-  margin: 10px auto;
-}
+/* state */
 
 .selected {
   color: red;
 }
+
 
 .stickyNav {
   position: fixed;
@@ -156,11 +131,49 @@ p, .projectDescription, li>a {
   display: none;
 }
 
-footer p {
+.nav, .stickyNav {
+  display: block;
+  font-size: 1.3rem;
+  background-color: white;
+  margin: 0 auto;
+  width: 100%;
   text-align: center;
-  font-size: 0.7em;
-  margin: 20px auto;
 }
+
+.nav a, .stickyNav a {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/* /state */
+
+
+/* theme */
+
+#pageTitle {
+  font-size: 2.0rem;
+  display: block;
+  margin: 10px auto;
+}
+
+#ericImg {
+    width: 100px;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid red;
+    border-radius: 500px;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+}
+
+#pageTitle {
+  display: block;
+  text-align: center;
+  font-weight: 300;
+  color: #797979;
+}
+
+/* /theme */
 
 
 /* twitter bootstrap fluid row styles */
@@ -287,29 +300,32 @@ footer p {
   }
 
   .stickyNav a, .nav a {
-    font-size: 0.9em;
+    font-size: 1.2rem;
     font-weight: 300;
   }
 
 
   #pageTitle {
-    font-size: 1.7em;
-    margin-top: -0.05em;
+    margin-top: -0.05rem;
     margin-left: 10px;
     float: left;
     line-height: 102px;
   }
 
+  h1 {
+    font-size: 1.9rem;
+  }
+
   h2 {
-    font-size: 1.8em;
+    font-size: 1.5rem;
   }
 
   h3 {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
 
   p, .projectDescription, li>a {
-    font-size: 1.0em;
+    font-size: 1.0rem;
   }
 
   .nav  {
@@ -318,22 +334,13 @@ footer p {
   }
 
   .projectName {
-    font-size: 1.6em;
+    font-size: 1.6rem;
   }
 
   .projectDate {
-    font-size: 0.9em;
+    font-size: 0.9rem;
   }
 
   .projectLink {
-    font-size: 0.8em;
+    font-size: 0.8rem;
   }
-
-
-
-
-
-
-}
-@media screen and (min-width: 1000px) {...}
-@media screen and (min-width: 1400px) {...}
