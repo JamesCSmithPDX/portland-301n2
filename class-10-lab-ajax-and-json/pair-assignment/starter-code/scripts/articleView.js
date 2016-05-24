@@ -101,13 +101,8 @@ articleView.create = function() {
 
 
 articleView.initIndexPage = function() {
-<<<<<<< HEAD
-
-  Article.all.forEach(function(a) {
-=======
   Article.all.forEach(function(a){
->>>>>>> 5a15588a11057b4ec0ef7961e71250a8c9480cf3
-    $('#articles').append(a.toHtml())
+    $('#articles').append(a.toHtml());
   });
 
   articleView.populateFilters();
