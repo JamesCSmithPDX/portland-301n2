@@ -41,17 +41,42 @@ Project.loadAll = function(projectData){
   });  //create array
 };
 
-Project.fetchAll = function(){
-  if (localStorage.rawData) {
-    Project.loadAll(
-      JSON.parse(localStorage.getItem('rawData'))
-      );
-    projectView.initIndexPage(); //DONE: Change this fake method call to the correct one that will render the index page.
-  } else {
-    $.getJSON('data/portfolioProjects.json', function(rawData) {
-      Project.loadAll(rawData);
-      localStorage.setItem('rawData', JSON.stringify(rawData));
-    });
+//check etag json file
+Project.fetchAll = function() {
+  $.ajax({
+    method: 'GET',
+    url: 'data/portfolioProjects.json',
+    success: function(data, message, xhr) {
+      var etagNew = xhr.getResponseHeader('ETag');
+      var etagOld = localStorage.getItem('etag');
+      if (!localStorage.rawData) {
+        // no local storage get from server
+        Project.fetchServer();
+      } else if (etagNew === etagOld ) {
+      //load from local
+        Project.fetchLocal();
+      } else {
+      // load from server
+        Project.fetchServer();
+      }
+      //set etag
+      localStorage.setItem('etag', etagNew);
+    }
+  });
+};
+
+// load json from local
+Project.fetchLocal = function(){
+  Project.loadAll(JSON.parse(localStorage.getItem('rawData')));
+  projectView.initIndexPage();
+};
+
+
+//load json from server
+Project.fetchServer = function(){
+  $.getJSON('data/portfolioProjects.json', function(rawData) {
+    Project.loadAll(rawData);
+    localStorage.setItem('rawData', JSON.stringify(rawData));
     projectView.initIndexPage();
-  }
+  });
 };
