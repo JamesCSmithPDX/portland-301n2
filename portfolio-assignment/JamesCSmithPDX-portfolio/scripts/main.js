@@ -42,9 +42,16 @@ Project.loadAll = function(projectData){
 };
 
 Project.fetchAll = function(){
-  $.getJSON('/data/portfolioProjects.json', function(json, status, XHR){
-    console.log(json);
-    // Project.loadAll(json);
-    // projectView.initIndexPage();
-  });
+  if (localStorage.rawData) {
+    Project.loadAll(
+      JSON.parse(localStorage.getItem('rawData'))
+      );
+    projectView.initIndexPage(); //DONE: Change this fake method call to the correct one that will render the index page.
+  } else {
+    $.getJSON('data/portfolioProjects.json', function(rawData) {
+      Project.loadAll(rawData);
+      localStorage.setItem('rawData', JSON.stringify(rawData));
+    });
+    projectView.initIndexPage();
+  }
 };
