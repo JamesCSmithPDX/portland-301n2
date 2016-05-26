@@ -36,6 +36,8 @@ projectView.scroll = function(tease) {
   }, 2000);
 };
 
+var byRow = $('body').hasClass('test-rows');
+
 //call the functions
 projectView.initIndexPage = function(){
   Project.all.forEach(function(a){
@@ -45,4 +47,9 @@ projectView.initIndexPage = function(){
   $('.jumbotron').fadeTo(15000, 0.0);
   projectView.handleMainNav();
   projectView.createTeaser();
+  $('#projects').each(function() {
+    $(this).children('.sameHeight').matchHeight({
+      byRow: byRow
+    });
+  });
 };

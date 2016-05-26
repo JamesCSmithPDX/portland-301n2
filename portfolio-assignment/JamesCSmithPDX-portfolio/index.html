@@ -18,7 +18,7 @@
     }
   </style>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-  <!-- <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'> -->
+
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="styles/base-normalize.css">
@@ -35,10 +35,10 @@
           <header>
             <h2>{{title}}</h2>
               <div class="contributors">
-                  By {{contributor}}
-                  <time pubdate datetime="2000-01-01" title={{postDate}}  >{{publishStatus}}</time>
+                  <a href="{{contributorUrl}}">By {{contributor}}</a>
+                  <time pubdate datetime="2000-01-01" title={{postDate}}>{{publishStatus}}</time>
                     <div>
-                    <a href="{{contributorUrl}}"><img src="{{imgSrc}}" alt="{{imgAlt}}"></a>
+                    <img src="{{imgSrc}}" alt="{{imgAlt}}">
                   </div>
               </div>
           </header>
@@ -85,9 +85,9 @@
     <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-    <!-- <script src="scripts/portfolioProjects.js"></script> -->
     <script src="scripts/main.js"></script>
     <script src="scripts/projectView.js"></script>
+    <script src="scripts/jquery.matchHeight-min.js" type="text/javascript"></script>
     <script>Project.fetchAll();</script>
 </body>
 </html>
