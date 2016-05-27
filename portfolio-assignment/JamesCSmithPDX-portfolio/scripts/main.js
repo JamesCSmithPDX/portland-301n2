@@ -80,19 +80,5 @@
     });
   };
 
-  var anagram = {};
-
-  anagram.create = function() {
-    var name = 'James Smith';
-    name = name.split('');
-    console.log(name);
-    var myAnagram = name.map(function(prev, next, index) {
-      
-
-    });
-  },
-
-anagram.create();
-
   module.Project = Project;
 })(window);
