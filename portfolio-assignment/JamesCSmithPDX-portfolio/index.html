@@ -49,6 +49,12 @@
         </article>
       </div>
   </script>
+  <script id="anagram" type="text/x-handlebars-template">
+  <p> An anagram of my name is {{anagram}}.
+  </p>
+  </script>
+
+
 </head>
 <body>
   <div class="container">
@@ -88,6 +94,6 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/projectView.js"></script>
     <script src="scripts/jquery.matchHeight-min.js" type="text/javascript"></script>
-    <script>Project.fetchAll();</script>
+    <script>Project.fetchAll(projectView.initIndexPage);</script>
 </body>
 </html>
