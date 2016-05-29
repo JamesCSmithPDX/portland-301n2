@@ -7,7 +7,7 @@
     "postDate": "2016-04-17",
     "imgSrc": "imgAssets/busmall.png",
     "imgAlt": "BusMall",
-    "projDescription": "<p>The problem domain was to build a market research tool that show user three images and they would vote on their favorite by clicking on the image.</p><p>I used splice on the image array to keep from showing the user the same images consecutively. I also kept track of votes and displayed them in a chart via Canvasjs library.< /p><p>The scope changed to track all votes so a marketer could get results from multiple users. To accomplish this I implemented local storage and again used Canvasjs to show all the results in local storage in a bar chart.</p>"
+    "projDescription": "<p>The problem domain was to build a market research tool that show user three images and they would vote on their favorite by clicking on the image.</p><p>I used splice on the image array to keep from showing the user the same images consecutively. I also kept track of votes and displayed them in a chart via Canvasjs library.</p><p>The scope changed to track all votes so a marketer could get results from multiple users. To accomplish this I implemented local storage and again used Canvasjs to show all the results in local storage in a bar chart.</p>"
   },
   {
     "title": "Salmon Cookies",
@@ -37,7 +37,7 @@
     "postDate": "2016-05-10",
     "imgSrc": "imgAssets/trajectoryds.png",
     "imgAlt": "TrajectoryDS.com",
-    "projDescription": "<p>I needed to create a quick one page landing page before attending the WebVisions conference.</p><p>Given the quick turn-around, I customized a WordPress template.< /p><p>I used it to create a one page site for my consulting business. The site provides details the services I provide, including my new development skills.</p>"
+    "projDescription": "<p>I needed to create a quick one page landing page before attending the WebVisions conference.</p><p>Given the quick turn-around, I customized a WordPress template.</p><p>I used it to create a one page site for my consulting business. The site provides details the services I provide, including my new development skills.</p>"
   },
   {
     "title": "Color Plucker",
