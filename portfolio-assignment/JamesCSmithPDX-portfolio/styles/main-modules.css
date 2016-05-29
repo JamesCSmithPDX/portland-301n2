@@ -55,7 +55,7 @@ footer p {
     margin: 1rem 2rem;
     font-size: 1.8rem;
 }
-#anagram > p {
+.hbAnagram {
   font-size: 1rem;
   align-self: stretch;
   color: #222f5b;
