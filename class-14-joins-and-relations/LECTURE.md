@@ -6,6 +6,7 @@
 
 * No class Mon May 30th - Memorial Day Holiday
 * Sat Jun 18th Class Makeup - no class on Sun Jun 19th (NodePDX)
+* Fri Jun 3rd Lab 09: Portfolio Assignment Due
 * Fri Jun 3rd Lab 10: Recap Pair Assignment Due 
 	
 ### For those following along
