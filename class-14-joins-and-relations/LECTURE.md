@@ -1,20 +1,13 @@
-# Announcements - Thu May 26th
+# Announcements - Sun May 29th
 
 ### Get your reviews in
 
 ### Assignments for this Week
 
-* No class Mon 30th - Memorial Day Holiday
-* Jun Sat 18th Class Makeup - no class on Sun Jun 19th (NodePDX)
-
-
-
-
-* Wed May 25th: Read: SQL Joins & Relations Links
-* Fri May 27th: Pair Assignment 8 : CRUD Due
-* Fri May 27th: Portfolio Assignment 7 : Functional Due
-* Note: There is no assignment for Portfolio 8: CRUD
-
+* No class Mon May 30th - Memorial Day Holiday
+* Sat Jun 18th Class Makeup - no class on Sun Jun 19th (NodePDX)
+* Fri Jun 3rd Lab 10: Recap Pair Assignment Due 
+	
 ### For those following along
 `git checkout -b sandbox`
 
@@ -24,85 +17,169 @@ Remember to add and commit any changes into your sandbox. This will avoid future
 
 # Learning Objectives
 
-1. Understanding the concept of a relational database.
-2. How to create and drop tables.
-3. How to insert records.
-4. How to select records.
-5. How to update records.
-6. How to delete records.
-7. Exposure to formation of more advanced SQL queries.
-8. Knowledge of how to interact with WebSQL in the browser.
-9. Ability to interact with Web SQL using JavaScript.
+1. Understanding benefits of normalization.
+2. Ability to normalize a database.
+3. How to use foreign keys.
+4. How to use subqueries.
+5. How to perform an inner join.
+6. How to join more than two tables if needed.
 
 # Lecture
 
-## LIMIT and OFFSET
-
-[source](https://en.wikipedia.org/wiki/Select_(SQL))
-
-The SQL SELECT LIMIT statement is used to retrieve records from one or more tables in a database and limit the number of records returned based on a limit value.
-
-Example:
-
-```
-SELECT * FROM people LIMIT 10
-```
-
-The SQL SELECT OFFSET statement is used to skip that many rows before beginning to return rows.
-
-Example:
-
-```
-SELECT * FROM people OFFSET 200
-```
-
-When used togther, they are very effective at paginating data:
-
-```
-SELECT * FROM people LIMIT 10 OFFSET 200
-```
-
-## querystring
-
-[source](https://en.wikipedia.org/wiki/Query_string)
-
-On the World Wide Web, a query string is the part of a uniform resource locator (URL) containing data that does not fit conveniently into a hierarchical path structure.
-
-What does that mean? It means everything after the question mark.
-
-Example:
-
-```
-http://example.com/over/there?name=ferret
-```
-
-The query string is `name=ferret`.  Query strings will be in the format:
-
-```
-key1=value1&key2=value2&key3=value3  // etc
-```
-
-Note: There is some *encoding* that takes place in the query string:
-1. Spaces are converted to plus signs (+) or (%20)
-2. Other special characters are *URI encoded*, which means to take the ASCII value of the character and append the percent sign. 
-
-Example:
-
-```
-bar$ => bar%24
-^barney => %5Ebarney
-
-foo=bar$&fred=^barney // gets encoded to
-foo=bar%24&fred=%5Ebarney
-```
-
-Why is that? What if you wanted to represent an equals sign `=` or question mark `?` or ampersand `&` ? In general, there are certain reserved characters allowed in a URL and we don't want to mix these up with our values.
-
 # Demo
 
-## JSON Validator
+## SQL Demo
 
-[source](https://jsonformatter.curiousconcept.com/)
+Starting SQL:
+
+```sql
+DROP TABLE IF EXISTS courses;
+CREATE TABLE courses (
+  id INT NOT NULL PRIMARY KEY,
+  name VARCHAR(32) DEFAULT NULL,
+  teacher_id INT NOT NULL
+);
+
+INSERT INTO courses VALUES
+(10001, 'Computer Science 142', 1234),
+(10002, 'Computer Science 143', 5678),
+(10003, 'Computer Science 190M', 9012),
+(10004, 'Informatics 100', 1234);
+
+DROP TABLE IF EXISTS grades;
+CREATE TABLE grades (
+  student_id INT NOT NULL,
+  course_id INT NOT NULL,
+  grade varchar(2) DEFAULT NULL
+);
+
+INSERT INTO grades VALUES
+(123, 10001, 'B-'),
+(123, 10002, 'C'),
+(456, 10001, 'B+'),
+(888, 10002, 'A+'),
+(888, 10003, 'A+'),
+(404, 10004, 'D+'),
+(404, 10002, 'B'),
+(456, 10002, 'D-');
+
+DROP TABLE IF EXISTS students;
+CREATE TABLE students (
+  id INT NOT NULL PRIMARY KEY,
+  name VARCHAR(32) DEFAULT NULL,
+  email VARCHAR(32) DEFAULT NULL,
+  password VARCHAR(16) DEFAULT NULL
+);
+
+INSERT INTO students VALUES
+(123, 'Bart', 'bart@fox.com', 'bartman'),
+(404, 'Ralph', 'ralph@fox.com', 'catfood'),
+(456, 'Milhouse', 'milhouse@fox.com', 'fallout'),
+(888, 'Lisa', 'lisa@fox.com', 'vegan');
+
+DROP TABLE IF EXISTS teachers;
+CREATE TABLE teachers (
+  id INT NOT NULL PRIMARY KEY,
+  name VARCHAR(32) DEFAULT NULL
+);
+
+INSERT INTO teachers VALUES
+(1234, 'Krabappel'),
+(5678, 'Hoover'),
+(9012, 'Stepp');
+```
+
+Getting our values:
+
+```sql
+-- SELECT students and grades, no explicit join
+SELECT * 
+ FROM students, grades 
+WHERE students.id = grades.student_id
+
+-- SELECT students and grades, join
+SELECT * 
+  FROM students
+  JOIN grades ON grades.student_id = students.id
+
+-- SELECT students and grades, inner join
+SELECT * 
+  FROM students
+ INNER JOIN grades ON grades.student_id = students.id
+
+-- SELECT students and grades, inner join using alias
+SELECT * 
+  FROM students AS s
+ INNER JOIN grades AS g ON g.student_id = s.id
+
+-- SELECT specifc columns from students and grades, inner join using alias
+SELECT s.id
+     , s.name
+     , s.email
+     , g.course_id
+     , g.grade
+  FROM students AS s
+ INNER JOIN grades AS g ON g.student_id = s.id
+
+-- select from students, grades and courses
+SELECT s.id
+     , s.name
+     , s.email
+     , g.course_id
+     , g.grade
+  FROM students AS s
+ INNER JOIN grades AS g ON g.student_id = s.id
+ INNER JOIN courses AS c ON c.id = g.course_id
+
+-- select from students, grades and courses, labelling all columns explicitly
+SELECT s.id AS student_id
+     , s.name AS student_name
+     , s.email AS student_email
+     , g.course_id AS course_id
+     , g.grade AS course_grade
+     , c.name AS course_name
+  FROM students AS s
+ INNER JOIN grades AS g ON g.student_id = s.id
+ INNER JOIN courses AS c ON c.id = g.course_id
+
+
+-- select from students, grades, courses and teachers, labelling all columns explicitly
+SELECT s.id AS student_id
+     , s.name AS student_name
+     , s.email AS student_email
+     , g.course_id AS course_id
+     , g.grade AS course_grade
+     , c.name AS course_name
+     , t.name AS teacher_name
+  FROM students AS s
+ INNER JOIN grades AS g ON g.student_id = s.id
+ INNER JOIN courses AS c ON c.id = g.course_id
+ INNER JOIN teachers AS t on t.id = c.teacher_id
+
+
+INSERT INTO students VALUES (999, 'Nelson', 'nelson@fox.com', 'newton');
+
+SELECT s.id AS student_id
+     , s.name AS student_name
+     , s.email AS student_email
+     , g.course_id AS course_id
+     , g.grade AS course_grade
+     , c.name AS course_name
+     , t.name AS teacher_name
+  FROM students AS s
+  LEFT OUTER JOIN grades AS g ON g.student_id = s.id
+  LEFT OUTER JOIN courses AS c ON c.id = g.course_id
+  LEFT OUTER JOIN teachers AS t on t.id = c.teacher_id
+
+```
+
+## Call Stack Demo
+
+Concepts: Call stack, breakpoints, debugging and black boxing. 
+
+```
+cd /Work/github.com/kbrumer/portland-301n2/class-13-lab-crud-a-resource/demo-completed
+```
 
 
 # Pair Programming
@@ -111,11 +188,19 @@ git add --all
 git commit -a -m "Any sandbox work."
 git push origin sandbox
 
+git pull origin master
+git pull upstream master
+git push origin master
+
 git checkout -b class-13
 cd class-13-lab-crud-a-resource
 cd pair-programming
 unzip starter-code.zip // password is 'crud'
 mv starter-code ken-cesar
+
+// before pull requests
+git pull origin master
+git pull upstream master
 ```
 
 
