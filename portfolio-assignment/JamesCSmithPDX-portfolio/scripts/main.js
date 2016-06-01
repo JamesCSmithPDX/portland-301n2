@@ -83,7 +83,7 @@
   var anagram = {};
 
   anagram.create = function() {
-    
+
     var name = 'JAMES SMITH';  //scramble my name
     name = name.split(''); // split name into letters
     console.log(name);
@@ -124,5 +124,6 @@
     }
   };
 
-  module.anagram = anagram; module.Project = Project;
+  module.anagram = anagram;
+  module.Project = Project;
 })(window);
