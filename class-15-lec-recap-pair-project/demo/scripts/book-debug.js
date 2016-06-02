@@ -1,14 +1,5 @@
 // debugger
 
-var page = parseInt(new QueryData().page) || 1;
-var pageSize = 10;
-// DONE: Ensure that a database table for articles exists, every time we load the page.
-console.log('begin calling createTable');
-Book.createTable();
-console.log('end calling createTable');
-console.log('begin calling fetchAll');
-Book.fetchAll(Book.initPage);
-console.log('end calling fetchAll');
 
 // Enumerable properties are those properties whose internal [[Enumerable]] flag is set to true, which is the default
 // for properties created via simple assignment or via a property initializer (properties defined via
