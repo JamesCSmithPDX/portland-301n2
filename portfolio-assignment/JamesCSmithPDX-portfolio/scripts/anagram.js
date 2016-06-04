@@ -4,7 +4,7 @@
 
   anagram.create = function() {
 
-    var name = 'JAMES SMITH';  //scramble my name
+    var name = 'JAMESSMITH';  //scramble my name
     name = name.split(''); // split name into letters
     console.log(name);
     anagram.fisherYates(name); //run the ranomd shuffle function
