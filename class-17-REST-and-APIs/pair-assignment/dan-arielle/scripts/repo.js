@@ -14,10 +14,10 @@
     })
     .done(function(data, message, xhr) {
       repos.all = data;
-      console.log(repos.all);
+      console.log(message);
     })
     .fail(function(data, message, xhr) {
-      console.log('fuggg');
+      console.log(message);
     })
     .then(callback);
   };
