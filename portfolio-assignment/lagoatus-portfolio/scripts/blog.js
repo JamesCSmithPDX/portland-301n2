@@ -46,6 +46,9 @@
 
   Projects.allDays = function() {
 <<<<<<< HEAD:portfolio-assignment/lagoatus-portfolio/scripts/blog.js
+=======
+<<<<<<< HEAD:portfolio-assignment/lagoatus-portfolio/scripts/blog.js
+>>>>>>> 5b9d4415086f9815a8ab90adcc7061be09d8609a:portfolio-assignment/lagoatus-portfolio/scripts/blog.js
     return Projects.all.map(function(project) {
 =======
     return Projects.all.map(function(project) { // using map functionality to
