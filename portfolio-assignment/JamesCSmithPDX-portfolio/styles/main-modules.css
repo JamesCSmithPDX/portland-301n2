@@ -37,7 +37,7 @@ section.about {
     align-content: space-between;
     background-color: #eee;
     border-radius: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 3-px
 }
 .links {
     align-self: stretch;
@@ -64,24 +64,29 @@ p.hbAnagram {
   margin-top: 1rem;
   padding: 0;
 }
-footer ul {
+#repo {
   text-align: center;
 }
-
 #repo li {
-  display: inline;
-  text-align: center;
-  color: #0e1a40;
-  background-color: #0e1a40;
-  margin-right: 0.5rem;
+  float: none;
+  display: inline-block;
+  width: auto;
+  background-color: #222f5b;
+  margin-top: 0.4rem;
+  border: 1px solid #222f5b;
+  margin-left: 0.7rem;
+  -webkit-border-radius: 3px;
   border-radius: 5px;
-  padding-left: 1px;
-  padding-right: 1px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 #repo a {
-  color: #FFBB00;
-  font-family: 'Raleway', cursive;
-}
-#repo a:link {
   text-decoration: none;
+  color: #FFBB00;
+}
+
+#repo a:hover {
+  color: #222f5b;
+  background-color: #eee;
 }
