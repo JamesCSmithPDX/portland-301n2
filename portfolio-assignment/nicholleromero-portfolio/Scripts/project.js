@@ -2,45 +2,40 @@
 
 function Project (comps) {
   this.name = comps.name;
-  this.url = comps.url;
+  this.projectUrl = comps.projectUrl;
   this.description = comps.description;
-//  this.publishedOn = comps.publishedOn;
+  this.date = comps.date;
 };
 
 Project.all = [];
 
 Project.prototype.toHtml = function() {
-  // var template = Handlebars.compile($('#project-template').text());
-  //
   var template = $('#project-template').html();
+console.log("this woks", this)
   var compiledTemplate = Handlebars.compile(template);
-// this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);  // 6
-// this.publishStatus = this.publishedOn ? this.daysAgo + ' days ago' : '(draft)';   //6
   return compiledTemplate(this);
-// return template(this); //5-28
 };
 
 Project.loadAll = function(projectData){
-
-Project.all = projectData.map(function(p){   //new
-  return new Project(p);   //new
+Project.all = projectData.map(function(p){
+  return new Project(p);
 });
-    //
     // projectData.forEach(function(p) {  //new
     // Project.all.push(new Project(p));  //new
 };
 
-Project.fetchAll = function() {
+Project.fetchAll = function(callback) {
   Project.getData().then(function(data){
     // debugger;
     Project.loadAll(data);
     Project.all.forEach(function(a){
       $('#projects').append(a.toHtml());
     });
-    console.log("it works", data);
-  })
+    //console.log("it works", data);
+  }).then(function() {
+    callback();
+  });
 }
-
 
 Project.getData = function(){
   return $.ajax({
@@ -56,7 +51,6 @@ Project.getData = function(){
 }
 
 // -------NEW
-
 // Project.numWordsAll = function() {
 //   return Project.all.map(function(project){
 //       numWords :
@@ -69,16 +63,11 @@ Project.getData = function(){
 //     })
 // };
 //
-
 // ---------END NEW
-
 
 window.Project = Project;
 
 })(window);
-
-
-
 
 
 
