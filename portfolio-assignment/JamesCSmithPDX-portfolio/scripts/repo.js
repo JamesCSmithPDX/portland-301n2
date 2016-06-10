@@ -27,10 +27,12 @@
   repos.pickRepos = function() {
     return repos.all.filter(function(repo) {
       var createdDate = Date.parse(repo['created_at']);
-      var baseDate = Date.parse('2016-03-08');
+      var todayDate = new Date();
+      var baseDate = todayDate.setMonth(todayDate.getMonth() - 3);
       var size = parseInt(repo['size']);
+      var fork = repo['fork'];
 
-      if (createdDate > baseDate && size > 100) {
+      if (createdDate > baseDate && size > 100 && fork == false) {
         return repo['created_at'];
       }
     });

@@ -64,7 +64,24 @@ p.hbAnagram {
   margin-top: 1rem;
   padding: 0;
 }
+footer ul {
+  text-align: center;
+}
+
 #repo li {
   display: inline;
+  text-align: center;
   color: #0e1a40;
+  background-color: #0e1a40;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+#repo a {
+  color: #FFBB00;
+  font-family: 'Raleway', cursive;
+}
+#repo a:link {
+  text-decoration: none;
 }
