@@ -64,6 +64,9 @@ p.hbAnagram {
   margin-top: 1rem;
   padding: 0;
 }
+#repo {
+  text-align: center;
+}
 #repo li {
   float: none;
   display: inline-block;
