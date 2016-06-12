@@ -1,4 +1,4 @@
-# Announcements - Sun Jun 12th
+# Announcements - Sun Jun 12th / Week 6
 
 ### 20th Class - Lecture 13 Deployment / Lab 13 Deployment
 
@@ -10,7 +10,55 @@
 
 ### Assignments for this Week
 
-* ?????
+* Sun Jun 12th: Read Heroku: Getting Started with Node 
+
+* Sun Jun 12th: Read Page.js Readme
+
+* Mon Jun 13th: Pair Programming 13 Deployment Due
+	* As a site owner, I want my site running on a robust hosting platform, so that I don't have to hire a sysadmin.
+		- Create a new Heroku app for deployment.
+	* As a developer, I want my app to run in a development environment that matches production, so that I can reduce bugs related to infrastructure surprises.
+		- Start your app with node server.js
+		- TODO: Refactor your AJAX request to proxy your GitHub API calls through the server
+	* As a developer, I want my secret tokens accessed only through environment variables, so that I can keep them secure.
+		- Set the proper env vars on your local system.
+
+
+* Mon Jun 13th: Portfolio 11 Routes Due
+
+	* We converted the blog into a SPA by using the page.js library to capture clicks and execute a function to modify the page, rather than reloading content from a server.
+
+	* Give your portfolio the same treatment. Update your main nav so that each clickable item is a link to a different url, that is handled by a function as indicated by page.js.
+
+	* Keep your code organized in a M-V-C structure that isolates data management from presentation layer, from the controller that holds it all together.
+
+* Wed Jun 15th: Pair Programming 14 State Due
+
+	* Work with a pair to comment on the execution path for sections labeled with "COMMENT:". These items are essentially TODO items that have been done for you and demonstrate the concepts presented during lecture this morning. While you will not be building out any additional functionality for this assignment, you will need to describe what each newly refactored method does and where it points back to. The navigator for this assignment should be tracing the execution path and determining what each new method/update is doing while the driver will need to summarize the navigator's thoughts into a 1-2 sentence comment (below each "COMMENT:" item). Be sure to switch roles after 4-5 COMMENT items have been completed.
+
+* Thu Jun 16th: Project Week - Report #1 [source](https://github.com/codefellows/portland-301n2/tree/master/class-23-project-week-day-1)
+
+	* Your team must submit a proposal to an instructor with the following information:
+
+		- Your team's name
+		- Your team's members
+		- Your project's pitch. (What is the problem statement and what are the benefits of your solution? Read more about these [here](https://www.bidsketch.com/proposal-resources/proposal-templates/web-design-proposal-template).)
+		- A diagram of relevant details from your project's domain model
+A few wireframe sketches of your project's pages
+		- **TIP**: Use pencil and paper to diagram and sketch.
+
+	* Proposals, written or electronic, as per the project description, are due for review with the instruction team. First come, first served!
+
+* Fri Jun 17th: Portfolio 13 Deploy Due
+
+	* As a developer, I want my portfolio to run in a development environment that closely matches production, so that I can reduce bugs related to infrastructure surprises.
+		- You'll need to create a new Heroku app, and link it to your portfolio
+	* As a site owner, I want my site running on a robust hosting platform, so that I don't have to hire a sysadmin.
+		- You'll need to get your app deployed and running on Heroku.
+		- Heroku will need to know what kind of app you are running, and how to run it.
+		- You can create a new package.json file, or copy over package.json and server.js from the blog project.
+	* As a developer, I want my secret tokens accessed only through environment variables, so that I can keep them secure.
+		- You'll need to configure an environment variable on your production server, so the server.js file can access your token when it's running.
 
 	
 ### For those following along
@@ -31,6 +79,8 @@ git push origin master
 ```
 
 This will sync your master with the class's master repo and help avoid conflicts.
+
+### Anything else?
 
 # Learning Objectives
 
