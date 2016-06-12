@@ -7,7 +7,6 @@
     getTemplate('portfolio', data, callback);
   };
 
-
   // create tab views of content in #projects and #about
   projectView.portfolio = function() {
     $('.jumbotron').fadeTo(5000, 1);
@@ -15,6 +14,15 @@
     $('#projects').fadeIn(5000);
     projectView.scroll('#projects');
     projectView.createTeaser();
+  };
+
+  projectView.about = function() {
+    $('.jumbotron').fadeTo(5000, 1);
+    $('.page-content').hide();
+    $('#hbAnagram').remove();
+    anagram.create();
+    $('#about').fadeIn(5000);
+    projectView.scroll('#about');
   };
 
   projectView.about = function() {
