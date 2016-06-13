@@ -15,7 +15,7 @@
 
   Project.all = [];
 
-  // // TODO: add date info back to project template
+  // // DONE: add date info back to project template
   // //build a blog post
   // Project.prototype.dates = function() {
   //
