@@ -6,7 +6,6 @@
     Projects.fetchall(projectView.initIndexPage);
     $('.tab-content').hide();
     $('#projects').show();
-
   };
 
   module.projectsController = projectsController;
